@@ -2,82 +2,117 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Programmation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programmation</title>
 
 <style>
+
+/* =========================
+   BASE
+========================= */
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    text-align: center;
 }
 
-.container {
+/* =========================
+   CONTAINERS
+========================= */
+
+.container-desktop,
+.container-mobile {
     position: relative;
-    width: 100%;
-    max-width: 1200px; /* limite pour grands écrans */
-    margin: auto;
+    width: 100vw;
+    height: 100vh;
 }
 
-.container img {
+.container-desktop img,
+.container-mobile img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Style des pastilles */
+/* Par défaut on montre desktop */
+.container-mobile {
+    display: none;
+}
+
+/* =========================
+   PASTILLES (STYLE GLOBAL)
+========================= */
+
 .pastille {
     position: absolute;
-    width: 60px;
-    height: 60px;
-    background-color: rgba(200, 0, 0, 0.85);
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
     text-decoration: none;
     color: white;
     font-weight: bold;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s;
-    font-size: 1rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    
+    /* Ombre élégante */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
+/* Effet au survol */
 .pastille:hover {
     transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
 }
 
-/* Position des pastilles par défaut pour grand écran */
-.p1 { top: 20%; left: 20%; }
-.p2 { top: 40%; left: 60%; }
-.p3 { top: 60%; left: 30%; }
-.p4 { top: 70%; left: 70%; }
-.p5 { top: 30%; left: 80%; }
+/* =========================
+   COULEURS
+========================= */
 
-/* Ajustement pour petits écrans (mobile/tablette) */
+.c1 { background-color: #e94b3c; }
+.c2 { background-color: #cb6ce6; }
+.c3 { background-color: #9dd241; }
+.c4 { background-color: #5cc4e2; }
+.c5 { background-color: #d4c5ff; }
+
+/* =========================
+   POSITIONS DESKTOP
+========================= */
+
+.d1 { top: 20%; left: 20%; }
+.d2 { top: 40%; left: 60%; }
+.d3 { top: 60%; left: 30%; }
+.d4 { top: 70%; left: 70%; }
+.d5 { top: 30%; left: 80%; }
+
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 768px) {
-    .pastille {
-        width: 50px;
-        height: 50px;
-        font-size: 0.9rem;
-    }
-    .p1 { top: 18%; left: 15%; }
-    .p2 { top: 38%; left: 55%; }
-    .p3 { top: 58%; left: 25%; }
-    .p4 { top: 68%; left: 65%; }
-    .p5 { top: 28%; left: 75%; }
-}
 
-@media (max-width: 480px) {
-    .pastille {
-        width: 40px;
-        height: 40px;
-        font-size: 0.8rem;
+    .container-desktop {
+        display: none;
     }
-    .p1 { top: 16%; left: 12%; }
-    .p2 { top: 36%; left: 50%; }
-    .p3 { top: 56%; left: 22%; }
-    .p4 { top: 66%; left: 60%; }
-    .p5 { top: 26%; left: 70%; }
+
+    .container-mobile {
+        display: block;
+    }
+
+    .pastille {
+        width: 65px;
+        height: 65px;
+        font-size: 1rem;
+    }
+
+    /* Positions MOBILE (à ajuster selon ton image mobile) */
+    .m1 { top: 25%; left: 40%; }
+    .m2 { top: 40%; left: 20%; }
+    .m3 { top: 55%; left: 60%; }
+    .m4 { top: 70%; left: 30%; }
+    .m5 { top: 85%; left: 50%; }
 }
 
 </style>
@@ -85,16 +120,28 @@ body {
 
 <body>
 
-<h1>Programmation</h1>
+<!-- ================= DESKTOP ================= -->
 
-<div class="container">
-    <img src="images/hero.jpg" alt="Programmation">
+<div class="container-desktop">
+    <img src="images/hero1.jpg" alt="Programmation Desktop">
 
-    <a href="item1.html" class="pastille p1">1</a>
-    <a href="item2.html" class="pastille p2">2</a>
-    <a href="item3.html" class="pastille p3">3</a>
-    <a href="item4.html" class="pastille p4">4</a>
-    <a href="item5.html" class="pastille p5">5</a>
+    <a href="item1.html" class="pastille d1 c1">1</a>
+    <a href="item2.html" class="pastille d2 c2">2</a>
+    <a href="item3.html" class="pastille d3 c3">3</a>
+    <a href="item4.html" class="pastille d4 c4">4</a>
+    <a href="item5.html" class="pastille d5 c5">5</a>
+</div>
+
+<!-- ================= MOBILE ================= -->
+
+<div class="container-mobile">
+    <img src="images/hero2.jpg" alt="Programmation Mobile">
+
+    <a href="item1.html" class="pastille m1 c1">1</a>
+    <a href="item2.html" class="pastille m2 c2">2</a>
+    <a href="item3.html" class="pastille m3 c3">3</a>
+    <a href="item4.html" class="pastille m4 c4">4</a>
+    <a href="item5.html" class="pastille m5 c5">5</a>
 </div>
 
 </body>
