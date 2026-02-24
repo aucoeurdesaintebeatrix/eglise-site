@@ -127,3 +127,62 @@ footer {
   h1 { font-size: 1.7rem; }
   button { width: 100%; }
 }
+/* ===============================
+   PROGRAMMATION PLEIN ÉCRAN
+================================ */
+
+.program-fullscreen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Image légèrement agrandie */
+.program-fullscreen img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+/* Pastilles */
+.pastille {
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pastille:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
+/* Couleurs */
+.c1 { background-color: #e94b3c; }
+.c2 { background-color: #cb6ce6; }
+.c3 { background-color: #9dd241; }
+.c4 { background-color: #5cc4e2; }
+.c5 { background-color: #d4c5ff; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .pastille {
+    width: 65px;
+    height: 65px;
+    font-size: 1rem;
+  }
+}
