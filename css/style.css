@@ -3,6 +3,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #222;
+  background-color: #001f3d; /* ← ajouté */
 }
 
 .hero {
