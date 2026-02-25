@@ -1,11 +1,27 @@
 <!DOCTYPE html>
+
+
 <html lang="fr">
-<head>
+</head>
+
+
+<div class="site-header">
+  <h1>Au Coeur de Sainte-Béatrix</h1>
+
+  <nav class="main-menu">
+    <a href="index.html">Accueil</a>
+    <a href="programmation.html">Programmation</a>
+  </nav>
+</div>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Programmation</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 
 <style>
+
+
 
 /* =========================
    BASE
@@ -13,8 +29,16 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: black; /* évite fond blanc autour */
+    background-color: #001f3d;
+}
+
+/* =========================
+   CONTENEUR GLOBAL (moins 1cm pour le bandeau)
+========================= */
+
+.container-desktop,
+.container-mobile {
+    height: calc(100vh - 1cm);
 }
 
 /* =========================
@@ -23,8 +47,8 @@ body {
 
 .pastille {
     position: absolute;
-    width: 85px;
-    height: 85px;
+    width: 47px;
+    height: 47px;
     border-radius: 50%;
     text-decoration: none;
     color: white;
@@ -42,23 +66,20 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
 }
 
-/* =========================
-   COULEURS
-========================= */
-
+/* Couleurs */
 .c1 { background-color: #e94b3c; }
 .c2 { background-color: #cb6ce6; }
 .c3 { background-color: #9dd241; }
 .c4 { background-color: #5cc4e2; }
 .c5 { background-color: #d4c5ff; }
+.c6 { background-color: #cb6ce6 }
 
 /* =========================
-   DESKTOP 16:9 STABLE
+   DESKTOP
 ========================= */
 
 .container-desktop {
     width: 100%;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,11 +99,12 @@ body {
 }
 
 /* Positions desktop */
-.d1 { top: 20%; left: 20%; }
-.d2 { top: 40%; left: 60%; }
-.d3 { top: 60%; left: 30%; }
-.d4 { top: 70%; left: 70%; }
-.d5 { top: 30%; left: 80%; }
+.d1 { top: 29.5%; left: 41.25%; }
+.d2 { top: 31.5%; left: 51.5%; }
+.d3 { top: 45.65%; left: 37.5%; }
+.d4 { top: 49.85%; left: 55.45%; }
+.d5 { top: 68.5%; left: 35.75%; }
+.d6 { top: 61.5%; left: 45%; }
 
 /* =========================
    MOBILE
@@ -91,8 +113,7 @@ body {
 .container-mobile {
     display: none;
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
 }
 
 .container-mobile img {
@@ -101,7 +122,6 @@ body {
     object-fit: cover;
 }
 
-/* Mobile actif */
 @media (max-width: 768px) {
 
     .container-desktop {
@@ -110,46 +130,42 @@ body {
 
     .container-mobile {
         display: block;
+        position: relative;
     }
 
     .pastille {
-        width: 65px;
-        height: 65px;
+        width: 40px;
+        height: 40px;
         font-size: 1rem;
     }
 
-    /* Positions mobile (à ajuster selon ton image mobile) */
-    .m1 { top: 25%; left: 40%; }
-    .m2 { top: 40%; left: 20%; }
-    .m3 { top: 55%; left: 60%; }
-    .m4 { top: 70%; left: 30%; }
-    .m5 { top: 85%; left: 50%; }
+    .m1 { top: 19.5%; left: 28.5%; }
+    .m2 { top: 21%; left: 51%; }
+    .m3 { top: 45%; left: 27%; }
+    .m4 { top: 47.5%; left: 58.5%; }
+    .m5 { top: 81%; left: 29%; }
+    .m6 { top: 62%; left: 45%; }
 }
 
 </style>
 </head>
 
-<body>
-<div class="program-fullscreen">
-  <img src="images/programmation-desktop.jpg" alt="Programmation">
+<body class="dark-page">
 
-  <a href="item1.html" class="pastille c1" style="top:20%; left:20%;">1</a>
-  <a href="item2.html" class="pastille c2" style="top:40%; left:60%;">2</a>
-  <a href="item3.html" class="pastille c3" style="top:60%; left:30%;">3</a>
-  <a href="item4.html" class="pastille c4" style="top:70%; left:70%;">4</a>
-  <a href="item5.html" class="pastille c5" style="top:30%; left:80%;">5</a>
-</div>
+
+
 <!-- ================= DESKTOP ================= -->
 
 <div class="container-desktop">
     <div class="image-wrapper">
         <img src="images/hero1.jpg" alt="Programmation Desktop">
 
-        <a href="item1.html" class="pastille d1 c1">1</a>
-        <a href="item2.html" class="pastille d2 c2">2</a>
-        <a href="item3.html" class="pastille d3 c3">3</a>
-        <a href="item4.html" class="pastille d4 c4">4</a>
-        <a href="item5.html" class="pastille d5 c5">5</a>
+        <a href="item1.html" class="pastille d1 c1"></a>
+        <a href="item2.html" class="pastille d2 c2"></a>
+        <a href="item3.html" class="pastille d3 c3"></a>
+        <a href="item4.html" class="pastille d4 c4"></a>
+        <a href="item5.html" class="pastille d5 c5"></a>
+        <a href="item2.html" class="pastille d6 c6"></a>
     </div>
 </div>
 
@@ -158,11 +174,12 @@ body {
 <div class="container-mobile">
     <img src="images/hero2.jpg" alt="Programmation Mobile">
 
-    <a href="item1.html" class="pastille m1 c1">1</a>
-    <a href="item2.html" class="pastille m2 c2">2</a>
-    <a href="item3.html" class="pastille m3 c3">3</a>
-    <a href="item4.html" class="pastille m4 c4">4</a>
-    <a href="item5.html" class="pastille m5 c5">5</a>
+    <a href="item1.html" class="pastille m1 c1"></a>
+    <a href="item2.html" class="pastille m2 c2"></a>
+    <a href="item3.html" class="pastille m3 c3"></a>
+    <a href="item4.html" class="pastille m4 c4"></a>
+    <a href="item5.html" class="pastille m5 c5"></a>
+    <a href="item2.html" class="pastille m6 c6"></a>
 </div>
 
 </body>
