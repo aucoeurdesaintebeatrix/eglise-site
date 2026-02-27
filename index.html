@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Au Cœur de Sainte-Béatrix</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accueil</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<div class="hero">
-
-  <!-- MENU EN HAUT À DROITE -->
-  <nav class="hero-menu">
+<div class="site-header">
+  <h1>Au Coeur de Sainte-Béatrix</h1>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+  <nav class="main-menu" id="mainMenu">
     <a href="index.html">Accueil</a>
     <a href="programmation.html">Programmation</a>
   </nav>
+</div>
 
+<div class="hero">
   <div class="hero-content">
-    <h1>Au Cœur de Sainte-Béatrix</h1>
+    <h1>Au Coeur de Sainte-Béatrix </h1>
   </div>
-
 </div>
 
 <footer>
   © 2026 OBNL De L’Église
 </footer>
 
+<script>
+function toggleMenu() {
+  document.getElementById("mainMenu").classList.toggle("show");
+}
+</script>
+
 </body>
-
 </html>
-
