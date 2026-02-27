@@ -1,27 +1,14 @@
 <!DOCTYPE html>
-
-
 <html lang="fr">
-</head>
 
-
-<div class="site-header">
-  <h1>Au Coeur de Sainte-Béatrix</h1>
-
-  <nav class="main-menu">
-    <a href="index.html">Accueil</a>
-    <a href="programmation.html">Programmation</a>
-  </nav>
-</div>
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Programmation</title>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="css/style.css">
 
 <style>
-
-
 
 /* =========================
    BASE
@@ -33,12 +20,12 @@ body {
 }
 
 /* =========================
-   CONTENEUR GLOBAL (moins 1cm pour le bandeau)
+   CONTENEUR GLOBAL
 ========================= */
 
 .container-desktop,
 .container-mobile {
-    height: calc(100vh - 1cm);
+    height: calc(100vh - 70px);
 }
 
 /* =========================
@@ -47,23 +34,13 @@ body {
 
 .pastille {
     position: absolute;
-    width: 47px;
-    height: 47px;
+    width: 3%;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-}
-
-.pastille:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
 }
 
 /* Couleurs */
@@ -72,14 +49,13 @@ body {
 .c3 { background-color: #9dd241; }
 .c4 { background-color: #5cc4e2; }
 .c5 { background-color: #d4c5ff; }
-.c6 { background-color: #cb6ce6 }
+.c6 { background-color: #cb6ce6; }
 
 /* =========================
    DESKTOP
 ========================= */
 
 .container-desktop {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,16 +71,17 @@ body {
 .image-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center 65%;
 }
 
 /* Positions desktop */
-.d1 { top: 29.5%; left: 41.25%; }
-.d2 { top: 31.5%; left: 51.5%; }
-.d3 { top: 45.65%; left: 37.5%; }
-.d4 { top: 49.85%; left: 55.45%; }
-.d5 { top: 68.5%; left: 35.75%; }
-.d6 { top: 61.5%; left: 45%; }
+.d1 { top: 29.1%; left: 41.25%; }
+.d2 { top: 29.1%; left: 50%; }
+.d3 { top: 49%; left: 35.5%; }
+.d4 { top: 49.85%; left: 53%; }
+.d5 { top: 73.5%; left: 34%; }
+.d6 { top: 60%; left: 49.5%; }
 
 /* =========================
    MOBILE
@@ -113,7 +90,6 @@ body {
 .container-mobile {
     display: none;
     position: relative;
-    width: 100%;
 }
 
 .container-mobile img {
@@ -130,32 +106,36 @@ body {
 
     .container-mobile {
         display: block;
-        position: relative;
     }
 
     .pastille {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+        width: 7%;
     }
 
-    .m1 { top: 19.5%; left: 28.5%; }
-    .m2 { top: 21%; left: 51%; }
-    .m3 { top: 45%; left: 27%; }
+    .m1 { top: 20%; left: 28.5%; }
+    .m2 { top: 21%; left: 51.5%; }
+    .m3 { top: 45%; left: 28.2%; }
     .m4 { top: 47.5%; left: 58.5%; }
-    .m5 { top: 81%; left: 29%; }
-    .m6 { top: 62%; left: 45%; }
+    .m5 { top: 81%; left: 30%; }
+    .m6 { top: 62.5%; left: 45%; }
 }
 
 </style>
+
 </head>
 
-<body class="dark-page">
+<body>
 
+<div class="site-header">
+  <h1>Au Coeur de Sainte-Béatrix</h1>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+  <nav class="main-menu" id="mainMenu">
+    <a href="index.html">Accueil</a>
+    <a href="programmation.html">Programmation</a>
+  </nav>
+</div>
 
-
-<!-- ================= DESKTOP ================= -->
-
+<!-- DESKTOP -->
 <div class="container-desktop">
     <div class="image-wrapper">
         <img src="images/hero1.jpg" alt="Programmation Desktop">
@@ -169,8 +149,7 @@ body {
     </div>
 </div>
 
-<!-- ================= MOBILE ================= -->
-
+<!-- MOBILE -->
 <div class="container-mobile">
     <img src="images/hero2.jpg" alt="Programmation Mobile">
 
@@ -181,6 +160,12 @@ body {
     <a href="item5.html" class="pastille m5 c5"></a>
     <a href="item2.html" class="pastille m6 c6"></a>
 </div>
+
+<script>
+function toggleMenu() {
+  document.getElementById("mainMenu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
