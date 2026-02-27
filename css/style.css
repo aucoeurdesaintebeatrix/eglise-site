@@ -1,20 +1,165 @@
-/* Base styles */
+/* =========================================
+   IMPORT POLICES
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+/* =========================================
+   BASE
+========================================= */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background: white;
   color: #222;
-  background-color: #001f3d; /* ← ajouté */
 }
 
+/* =========================================
+   BANDEAU GLOBAL
+========================================= */
+
+.site-header {
+  position: relative;
+  height: 70px;
+  background: rgba(212,197,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.site-header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  margin: 0;
+  color: #001f3d;
+}
+
+/* MENU DESKTOP */
+
+.main-menu {
+  position: absolute;
+  right: 30px;
+  display: flex;
+  gap: 25px;
+}
+
+.main-menu a {
+  text-decoration: none;
+  color: #001f3d;
+  font-weight: 600;
+}
+
+/* BOUTON HAMBURGER */
+
+.hamburger {
+  display: none;
+  position: absolute;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #001f3d;
+}
+
+/* =========================================
+   MENU MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .main-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: rgba(212,197,255,0.98);
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .main-menu.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+/* =========================================
+   PAGE ITEM – TYPOGRAPHIE
+========================================= */
+
+.item-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  color: #001f3d;
+}
+
+.item-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 2.8rem;
+  margin-bottom: 0.5rem;
+  color: #e94b3c;
+}
+
+.item-subtitle {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #e94b3c;
+}
+
+.item-date {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #e94b3c;
+}
+
+.item-section-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.item-paragraph {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.item-highlight {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.item-small {
+  font-size: 0.9rem;
+  color: #666;
+}
+/* =========================================
+   HERO (ACCUEIL)
+========================================= */
+
 .hero {
-  height: 100vh;
+  height: calc(100vh - 70px);
   background: url("../images/hero.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   text-align: center;
   color: white;
-  position: relative;
 }
 
 .hero::after {
@@ -29,160 +174,31 @@ body {
   z-index: 1;
 }
 
-h1 {
+.hero h1 {
   font-size: 3rem;
-  margin-bottom: 2rem;
 }
 
-.menu {
+/* =========================================
+   PROGRAMMATION
+========================================= */
+
+.container-desktop {
   position: relative;
 }
 
-.hamburger-btn {
-  background: #1f3c88;
-  color: white;
-  border: none;
-  padding: 10px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  border-radius: 4px;
+.container-desktop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 65%;
 }
 
-.nav-links {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.nav-links.show {
-  display: flex;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 4rem auto;
-  padding: 0 2rem;
-}
-
-.program-item {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 2rem;
-  align-items: center;
-}
-
-.program-item img {
-  width: 150px;
-  border-radius: 6px;
-}
-
-button {
-  padding: 10px 16px;
-  background: #1f3c88;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-button:hover {
-  background: #16306b;
-}
-
-form {
-  margin-top: 2rem;
-  display: grid;
-  gap: 10px;
-  max-width: 500px;
-}
-
-input {
-  padding: 8px;
-  font-size: 1rem;
-}
-
-label {
-  font-size: 0.9rem;
-}
+/* =========================================
+   FOOTER
+========================================= */
 
 footer {
   text-align: center;
   padding: 2rem;
   background: #eee;
-}
-
-/* Media queries */
-@media (max-width: 1024px) {
-  h1 { font-size: 2.5rem; }
-}
-
-@media (max-width: 768px) {
-  h1 { font-size: 2rem; }
-  .program-item { flex-direction: column; align-items: flex-start; }
-  .program-item img { width: 100%; }
-}
-
-@media (max-width: 480px) {
-  h1 { font-size: 1.7rem; }
-  button { width: 100%; }
-}
-/* ===============================
-   PROGRAMMATION PLEIN ÉCRAN
-================================ */
-
-.program-fullscreen {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* Image légèrement agrandie */
-.program-fullscreen img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 110%;
-  height: 110%;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-}
-
-/* Pastilles */
-.pastille {
-  position: absolute;
-  width: 85px;
-  height: 85px;
-  border-radius: 50%;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.pastille:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
-}
-
-/* Couleurs */
-.c1 { background-color: #e94b3c; }
-.c2 { background-color: #cb6ce6; }
-.c3 { background-color: #9dd241; }
-.c4 { background-color: #5cc4e2; }
-.c5 { background-color: #d4c5ff; }
-
-/* Mobile */
-@media (max-width: 768px) {
-  .pastille {
-    width: 65px;
-    height: 65px;
-    font-size: 1rem;
-  }
 }
