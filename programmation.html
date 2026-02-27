@@ -4,70 +4,163 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cours de dessin</title>
+<title>Programmation</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* =========================
+   BASE
+========================= */
+
+body {
+    margin: 0;
+    background-color: #001f3d;
+}
+
+/* =========================
+   CONTENEUR GLOBAL
+========================= */
+
+.container-desktop,
+.container-mobile {
+    height: calc(100vh - 70px);
+}
+
+/* =========================
+   PASTILLES
+========================= */
+
+.pastille {
+    position: absolute;
+    width: 3%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Couleurs */
+.c1 { background-color: #e94b3c; }
+.c2 { background-color: #cb6ce6; }
+.c3 { background-color: #9dd241; }
+.c4 { background-color: #5cc4e2; }
+.c5 { background-color: #d4c5ff; }
+.c6 { background-color: #cb6ce6; }
+
+/* =========================
+   DESKTOP
+========================= */
+
+.container-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    aspect-ratio: 16 / 9;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 65%;
+}
+
+/* Positions desktop */
+.d1 { top: 29.1%; left: 41.25%; }
+.d2 { top: 29.1%; left: 50%; }
+.d3 { top: 49%; left: 35.5%; }
+.d4 { top: 49.85%; left: 53%; }
+.d5 { top: 73.5%; left: 34%; }
+.d6 { top: 60%; left: 49.5%; }
+
+/* =========================
+   MOBILE
+========================= */
+
+.container-mobile {
+    display: none;
+    position: relative;
+}
+
+.container-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+
+    .container-desktop {
+        display: none;
+    }
+
+    .container-mobile {
+        display: block;
+    }
+
+    .pastille {
+        width: 7%;
+    }
+
+    .m1 { top: 20%; left: 28.5%; }
+    .m2 { top: 21%; left: 51.5%; }
+    .m3 { top: 45%; left: 28.2%; }
+    .m4 { top: 47.5%; left: 58.5%; }
+    .m5 { top: 81%; left: 30%; }
+    .m6 { top: 62.5%; left: 45%; }
+}
+
+</style>
+
 </head>
 
-<body class="item-bg bg-right bg-dessin">
+<body>
 
-<!-- HEADER -->
 <div class="site-header">
-  <h1>Au Coeur de Sainte-Mélanie</h1>
-
+  <h1>Au Coeur de Sainte-Béatrix</h1>
   <button class="hamburger" onclick="toggleMenu()">☰</button>
-
   <nav class="main-menu" id="mainMenu">
     <a href="index.html">Accueil</a>
     <a href="programmation.html">Programmation</a>
   </nav>
 </div>
 
-<!-- CONTENU -->
-<div class="item-container">
+<!-- DESKTOP -->
+<div class="container-desktop">
+    <div class="image-wrapper">
+        <img src="images/hero1.jpg" alt="Programmation Desktop">
 
-  <div class="item-date">
-    Les lundis,<br>
-    du 2 mars au 27 avril de 13 h à 15 h
-  </div>
-
-  <div class="item-title">Cours de dessin</div>
-
-  <div class="item-subtitle">Pour adultes débutants</div>
-
-  <div class="item-section-title">
-    Avec l’artiste visuelle Hélène Essiambre
-  </div>
-
-  <div class="item-paragraph">
-    Dans l’ambiance chaleureuse et inspirante de l’église de Sainte-Béatrix,
-    plongez dans un atelier créatif où vous apprendrez les bases du dessin
-    dans un climat détendu, bienveillant et hautement inspirant.
-  </div>
-
-  <div class="item-highlight">
-    200 $ pour les 8 séances (matériel et collations inclus)
-  </div>
-
-  <div class="item-small">
-    Places limitées — réservez vite!
-  </div>
-
-  <!-- FORMULAIRE -->
-  <div class="item-form-wrapper">
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSdj_5PvQ5kg8ttDBhN8jEMzkWiJ74lDTpbL5yCSR30fTo66ow/viewform?usp=headered=true"
-      width="100%"
-      height="1200"
-      style="border:none; overflow:hidden;"
-      scrolling="no">
-    </iframe>
-  </div>
-
+        <a href="item1.html" class="pastille d1 c1"></a>
+        <a href="item2.html" class="pastille d2 c2"></a>
+        <a href="item3.html" class="pastille d3 c3"></a>
+        <a href="item4.html" class="pastille d4 c4"></a>
+        <a href="item5.html" class="pastille d5 c5"></a>
+        <a href="item2.html" class="pastille d6 c6"></a>
+    </div>
 </div>
 
-<!-- SCRIPT À LA FIN -->
+<!-- MOBILE -->
+<div class="container-mobile">
+    <img src="images/hero2.jpg" alt="Programmation Mobile">
+
+    <a href="item1.html" class="pastille m1 c1"></a>
+    <a href="item2.html" class="pastille m2 c2"></a>
+    <a href="item3.html" class="pastille m3 c3"></a>
+    <a href="item4.html" class="pastille m4 c4"></a>
+    <a href="item5.html" class="pastille m5 c5"></a>
+    <a href="item2.html" class="pastille m6 c6"></a>
+</div>
+
 <script>
 function toggleMenu() {
   document.getElementById("mainMenu").classList.toggle("show");
