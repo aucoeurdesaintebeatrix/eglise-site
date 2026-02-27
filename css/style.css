@@ -11,7 +11,7 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background: white;
   color: #222;
 }
@@ -148,30 +148,58 @@ body {
   color: #666;
 }
 /* =========================================
-   HERO (ACCUEIL)
+   HERO SLIDER
 ========================================= */
 
 .hero {
+  position: relative;
   height: calc(100vh - 70px);
-  background: url("../images/hero.jpg") center/cover no-repeat;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   text-align: center;
   color: white;
 }
 
+/* Slides superposées */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fadeSlider 20s infinite;
+}
+
+/* Images */
+.slide1 { background-image: url("../images/hero1.jpg"); animation-delay: 0s; }
+.slide2 { background-image: url("../images/hero2.jpg"); animation-delay: 5s; }
+.slide3 { background-image: url("../images/hero3.jpg"); animation-delay: 10s; }
+.slide4 { background-image: url("../images/hero4.jpg"); animation-delay: 15s; }
+
+@keyframes fadeSlider {
+
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }     /* fade in lent */
+  35%  { opacity: 1; }     /* reste visible longtemps */
+  40%  { opacity: 0; }     /* fade out lent */
+  100% { opacity: 0; }
+
+}
+
+/* Overlay sombre léger */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.4);
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero h1 {
@@ -201,4 +229,33 @@ footer {
   text-align: center;
   padding: 2rem;
   background: #eee;
+}
+/* =========================================
+   PASTILLES PROGRAMMATION
+========================================= */
+
+.pastille {
+  position: absolute;
+  width: 3%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+
+  z-index: 10;
+
+  /* Halo lumineux */
+  box-shadow:
+    0 0 25px rgba(255,255,255,0.6),
+    0 0 50px rgba(255,255,255,0.3);
+
+  animation: haloPulse 2.5s infinite ease-in-out;
+}
+
+/* Animation douce */
+@keyframes haloPulse {
+  0%   { box-shadow: 0 0 20px rgba(255,255,255,0.5),
+                       0 0 40px rgba(255,255,255,0.2); }
+  50%  { box-shadow: 0 0 35px rgba(255,255,255,0.9),
+                       0 0 70px rgba(255,255,255,0.4); }
+  100% { box-shadow: 0 0 20px rgba(255,255,255,0.5),
+                       0 0 40px rgba(255,255,255,0.2); }
 }
