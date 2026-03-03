@@ -9,10 +9,19 @@
 <link rel="stylesheet" href="css/style.css">
 
 <style>
+
+/* =========================
+   BASE
+========================= */
+
 body {
   margin: 0;
   background-color: #001f3d;
 }
+
+/* =========================
+   CONTENEUR DESKTOP
+========================= */
 
 .container-desktop {
   height: calc(100vh - 70px);
@@ -35,6 +44,27 @@ body {
   object-position: center 70%;
 }
 
+/* =========================
+   CONTENEUR MOBILE
+========================= */
+
+.container-mobile {
+  display: none;
+  height: calc(100vh - 70px);
+  position: relative;
+  text-align: center;
+}
+
+.container-mobile img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+}
+
+/* =========================
+   PASTILLES
+========================= */
+
 .pastille {
   position: absolute;
   width: 3.5%;
@@ -49,29 +79,81 @@ body {
 .c5 { background-color: #d4c5ff; }
 .c6 { background-color: #cb6ce6; }
 
-.d1 { top: 37%; left: 32%; }
-.d2 { top: 42%; left: 61.5%; }
-.d3 { top: 57.8%; left: 29.5%; }
-.d4 { top: 62%; left: 69%; }
-.d5 { top: 89.6%; left: 43%; }
-.d6 { top: 68.5%; left: 54%; }
+/* Positions desktop */
+.d1 { top: 25%; left: 31%; }
+.d2 { top: 26%; left: 61%; }
+.d3 { top: 47%; left: 28.3%; }
+.d4 { top: 52%; left: 70.5%; }
+.d5 { top: 82%; left: 42.4%; }
+.d6 { top: 58%; left: 54%; }
+
+/* Positions mobile */
+.m1 { top: 20%; left: 30%; }
+.m2 { top: 22%; left: 49%; }
+.m3 { top: 39%; left: 31%; }
+.m4 { top: 42%; left: 54%; }
+.m5 { top: 70%; left: 32.5%; }
+.m6 { top: 53.5%; left: 48%; }
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 768px) {
-  .container-desktop { display: none; }
+
+  .container-desktop {
+    display: none;
+  }
+
+  .container-mobile {
+    display: block;
+  }
+
+  .pastille {
+    width: 7%;
+  }
+
 }
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer-programmation {
+  background-color: #e94b3c;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
 </style>
 
 </head>
 
 <body>
 
+<!-- =========================
+     HEADER AVEC MENU
+========================= -->
+
 <div class="site-header">
   <h1>Au Coeur de Sainte-Béatrix</h1>
+
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+  <nav class="main-menu" id="mainMenu">
+    <a href="index.html">Accueil</a>
+    <a href="programmation.html">Programmation</a>
+  </nav>
 </div>
+
+<!-- =========================
+     DESKTOP
+========================= -->
 
 <div class="container-desktop">
   <div class="image-wrapper">
-    <img src="images/hero6.jpg" alt="Programmation">
+    <img src="images/hero6.jpg" alt="Programmation Desktop">
 
     <a href="item1.html" class="pastille d1 c1"></a>
     <a href="item2.html" class="pastille d2 c2"></a>
@@ -82,12 +164,45 @@ body {
   </div>
 </div>
 
+<!-- =========================
+     MOBILE
+========================= -->
+
+<div class="container-mobile">
+  <div class="image-wrapper-mobile">
+    <img src="images/hero-mobile.jpg" alt="Programmation Mobile">
+
+    <a href="item1.html" class="pastille m1 c1"></a>
+    <a href="item2.html" class="pastille m2 c2"></a>
+    <a href="item3.html" class="pastille m3 c3"></a>
+    <a href="item4.html" class="pastille m4 c4"></a>
+    <a href="item5.html" class="pastille m5 c5"></a>
+    <a href="item2.html" class="pastille m6 c6"></a>
+
+  </div>
+</div>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer class="footer-programmation">
-  <div class="footer-content">
-    <b>IIMPORTANT<b> : Afin d’aider l’organisme à bien organiser chacune des activités selon le nombre de personnes attendues, nous vous prions de prendre un instant <br>pour vous inscrire à l’activité de votre choix. Un immense MERCI pour votre collaboration !
-<br>Pour l’achat de billets et pour consulter tous les détails de la programmation, visitez notre page Facebook : Au Cœur de Sainte-Béatrix
+  <div>
+    <b>IMPORTANT :</b> Afin d’aider l’organisme à bien organiser chacune des activités selon le nombre de personnes attendues, <br>nous vous prions de prendre un instant pour vous inscrire à l’activité de votre choix.
+    <br>
+    Pour l’achat de billets et pour consulter tous les détails de la programmation, visitez notre page Facebook : Au Cœur de Sainte-Béatrix
   </div>
 </footer>
+
+<!-- =========================
+     SCRIPT MENU MOBILE
+========================= -->
+
+<script>
+function toggleMenu() {
+  document.getElementById("mainMenu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
