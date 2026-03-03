@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400&display=swap');
 
 /* =========================================
    BASE
@@ -31,7 +32,6 @@ body {
 }
 
 .site-header h1 {
-  font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   margin: 0;
   color: #001f3d;
@@ -91,6 +91,7 @@ body {
     display: block;
   }
 }
+
 /* =========================================
    PAGE ITEM – TYPOGRAPHIE
 ========================================= */
@@ -136,8 +137,8 @@ body {
 .item-paragraph {
   font-family: 'Lora', serif;
   font-weight: 400;
-  line-height: 1.3;
-    margin-bottom: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
 .item-highlight {
@@ -149,38 +150,24 @@ body {
   font-size: 0.9rem;
   color: #666;
 }
+
 /* =========================================
    HERO LOGO CENTRAL
 ========================================= */
 
 .hero-logo {
-  height: calc(100vh - 140px); /* 70px haut + 70px bas */
+  height: calc(100vh - 140px);
   background: white;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Logo rond */
 .logo-central {
   width: 600px;
   filter: drop-shadow(0 0 600px rgba(0, 31, 61, 0.35));
 }
 
-/* =========================================
-   BANDE BAS
-========================================= */
-
-.site-footer-bar {
-  height: 70px;
-  background: rgba(212,197,255,0.95);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #001f3d;
-  font-size: 0.9rem;
-}
-}
 /* =========================================
    HERO SLIDER
 ========================================= */
@@ -196,7 +183,6 @@ body {
   color: white;
 }
 
-/* Slides superposées */
 .hero-slide {
   position: absolute;
   inset: 0;
@@ -206,23 +192,19 @@ body {
   animation: fadeSlider 20s infinite;
 }
 
-/* Images */
 .slide1 { background-image: url("../images/hero0.jpg"); animation-delay: 0s; }
 .slide2 { background-image: url("../images/hero2.jpg"); animation-delay: 5s; }
 .slide3 { background-image: url("../images/hero3.jpg"); animation-delay: 10s; }
 .slide4 { background-image: url("../images/hero4.jpg"); animation-delay: 15s; }
 
 @keyframes fadeSlider {
-
   0%   { opacity: 0; }
-  5%   { opacity: 1; }     /* fade in lent */
-  35%  { opacity: 1; }     /* reste visible longtemps */
-  40%  { opacity: 0; }     /* fade out lent */
+  5%   { opacity: 1; }
+  35%  { opacity: 1; }
+  40%  { opacity: 0; }
   100% { opacity: 0; }
-
 }
 
-/* Overlay sombre léger */
 .hero::after {
   content: "";
   position: absolute;
@@ -246,24 +228,16 @@ body {
 
 .container-desktop {
   position: relative;
+  z-index: -2;
 }
 
 .container-desktop img {
-  width: 120%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 65%;
 }
 
-/* =========================================
-   FOOTER
-========================================= */
-
-footer {
-  text-align: center;
-  padding: 2rem;
-  background: #eee;
-}
 /* =========================================
    PASTILLES PROGRAMMATION
 ========================================= */
@@ -273,18 +247,13 @@ footer {
   width: 3%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-
   z-index: 10;
-
-  /* Halo lumineux */
   box-shadow:
     0 0 25px rgba(255,255,255,0.6),
     0 0 50px rgba(255,255,255,0.3);
-
   animation: haloPulse 2.5s infinite ease-in-out;
 }
 
-/* Animation douce */
 @keyframes haloPulse {
   0%   { box-shadow: 0 0 20px rgba(255,255,255,0.5),
                        0 0 40px rgba(255,255,255,0.2); }
@@ -292,4 +261,39 @@ footer {
                        0 0 70px rgba(255,255,255,0.4); }
   100% { box-shadow: 0 0 20px rgba(255,255,255,0.5),
                        0 0 40px rgba(255,255,255,0.2); }
+}
+
+.pastille::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.8);
+  animation: ringPulse 2.2s infinite;
+}
+
+@keyframes ringPulse {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* =========================================
+   FOOTER STANDARD
+========================================= */
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #eee;
+}
+
+/* =========================================
+   FOOTER PROGRAMMATION
+========================================= */
+
+.footer-programmation {
+  background-color: #e94b3c;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
 }
