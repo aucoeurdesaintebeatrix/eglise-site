@@ -41,7 +41,7 @@ body {
 
 .main-menu {
   position: absolute;
-  right: 30px;
+  right: 60px;
   display: flex;
   gap: 25px;
 }
