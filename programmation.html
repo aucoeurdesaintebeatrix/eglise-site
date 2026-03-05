@@ -1,90 +1,364 @@
-<!DOCTYPE html>
-<html lang="fr">
+/* =========================================
+   IMPORT POLICES
+========================================= */
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Programmation</title>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap');
 
-<link rel="stylesheet" href="css/style.css">
+/* =========================================
+   BASE
+========================================= */
 
-</head>
-
-<body class="page-programmation">
-
-  <a href="javascript:history.back()" class="back-arrow">←</a>
-
-<!-- HEADER -->
-
-<div class="site-header">
-
-  <h1 class="site-title">Au Coeur de Sainte-Béatrix</h1>
-
-  <button class="hamburger" onclick="toggleMenu()">☰</button>
-
-  <nav class="main-menu" id="mainMenu">
-    <a href="index.html">Accueil</a>
-    <a href="programmation.html">Programmation</a>
-  </nav>
-
-</div>
-
-<!-- =========================
-     LANDSCAPE
-========================= -->
-
-<div class="program-landscape">
-
-  <div class="image-wrapper">
-
-    <img src="images/hero6.jpg" alt="Programmation">
-
-    <a href="item1.html" class="pastille c1" style="top:26%; left:31%"></a>
-    <a href="item2.html" class="pastille c2" style="top:30%; left:60%"></a>
-    <a href="item3.html" class="pastille c3" style="top:45.75%; left:29%"></a>
-    <a href="item4.html" class="pastille c4" style="top:48%; left:68%"></a>
-    <a href="item5.html" class="pastille c5" style="top:77%; left:42.3%"></a>
-    <a href="item6.html" class="pastille c6" style="top:54%; left:54%"></a>
-
-  </div>
-
-</div>
-
-<!-- =========================
-     PORTRAIT
-========================= -->
-
-<div class="program-portrait">
-
-  <div class="image-wrapper">
-
-    <img src="images/hero-mobile.jpg" alt="Programmation mobile">
-
-    <a href="item1.html" class="pastille c1" style="top:20.7%; left:30%"></a>
-    <a href="item2.html" class="pastille c2" style="top:24%; left:51%"></a>
-    <a href="item3.html" class="pastille c3" style="top:41%; left:34%"></a>
-    <a href="item4.html" class="pastille c4" style="top:42%; left:57%"></a>
-    <a href="item5.html" class="pastille c5" style="top:67%; left:22.7%"></a>
-    <a href="item6.html" class="pastille c6" style="top:57%; left:43%"></a>
-
-  </div>
-
-</div>
-
-<!-- FOOTER -->
-
-<footer class="footer-programmation">
-
-<b>IMPORTANT :</b> Toutes les activités ont lieu à l’église de Sainte-Béatrix. Pour participer aux activités d’Au Coeur de Sainte-Béatrix, l’inscription est requise afin de faciliter l’organisation. Certaines activités sont payantes et nécessitent l’achat d’un billet (réduction pour les membres). Pour vous inscrire ou acheter un billet, cliquer simplement sur la pastille de couleur clignotante correspondant à l’activité de votre choix.
-
-
-</footer>
-
-<script>
-function toggleMenu() {
-  document.getElementById("mainMenu").classList.toggle("show");
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: white;
+  color: #ffffff;
 }
-</script>
 
-</body>
-</html>
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header {
+  height: 70px;
+  background: #001f3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+   z-index: 201;
+
+}
+
+.site-header h1 {
+  font-size: 1rem;
+  margin: 0;
+  color: #ffffff;
+   z-index: 201;
+}
+.main-menu {
+  position: absolute;
+  right: 60px;
+  display: flex;
+  gap: 25px;
+  z-index: 201;
+}
+
+/* =========================================
+   HERO ACCUEIL
+========================================= */
+
+.hero {
+  height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bloc blanc derrière logo */
+
+.hero-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LOGO */
+
+.hero-logo {
+  width: 750px;
+  max-width: 85%;
+  height: auto;
+}
+
+/* MENU */
+
+.main-menu {
+  position: absolute;
+  right: 60px;
+  display: flex;
+  gap: 25px;
+  z-index: 200;
+   color: #165390;
+}
+
+.main-menu a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  z-index: 200;
+}
+
+/* HAMBURGER */
+
+.hamburger {
+  display: none;
+  position: absolute;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+    color: #ebf1f6;
+
+}
+/* =========================================
+   PAGE ITEM – TYPOGRAPHIE
+========================================= */
+
+.item-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  color: #001f3d;
+}
+
+.item-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 3.2rem;
+  margin-bottom: .5rem;
+  color: #e94b3c;
+}
+
+.item-subtitle {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.9rem;
+  margin-bottom: 1.1rem;
+   line-height: 1.3rem;
+  color: #e94b3c;
+}
+
+.item-date {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #e94b3c;
+}
+
+.item-section-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.item-paragraph {
+  font-family: 'Lora', serif;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.item-highlight {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.item-small {
+  font-size: 0.9rem;
+  color: #666;
+}
+/* =========================================
+   PROGRAMMATION WRAPPERS
+========================================= */
+
+.program-landscape,
+.program-portrait {
+  height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* image wrapper */
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1600px;
+  z-index: 10;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================
+   PASTILLES
+========================================= */
+
+.pastille {
+  position: absolute;
+  width: 3.5%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+/* halo */
+
+.pastille::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.8);
+  animation: ringPulse 2.2s infinite;
+}
+
+@keyframes ringPulse {
+  0%   { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* =========================================
+   COULEURS
+========================================= */
+
+.c1 { background:#e94b3c; }
+.c2 { background:#cb6ce6; }
+.c3 { background:#9dd241; }
+.c4 { background:#5cc4e2; }
+.c5 { background:#d4c5ff; }
+.c6 { background:#cb6ce6; }
+
+/* =========================================
+   FOOTER
+========================================= */
+
+
+
+/* =========================================
+   ORIENTATION
+========================================= */
+
+/* portrait = mobile vertical + ipad vertical */
+
+@media (orientation: portrait) {
+
+  .program-landscape {
+    display: none;
+  }
+
+  .program-portrait {
+  height: 100vh;
+  margin-top: -70px;
+  padding-top: 70px;
+}
+
+  .pastille {
+    width: 7%;
+  }
+
+}
+
+/* landscape */
+
+@media (orientation: landscape) {
+
+  .program-landscape {
+    display: flex;
+  }
+
+  .program-portrait {
+    display: none;
+  }
+
+}
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .site-header {
+    justify-content: flex-start;
+    padding-left: 80px;
+  }
+
+  .site-title {
+    text-align: left;
+    font-size: 1rem;
+  }
+
+}
+
+/* =========================================
+   MENU MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .main-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: rgba(244, 212, 143, 0.98);
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .main-menu.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .main-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+}
+/* =========================================
+   FLECHE RETOUR
+========================================= */
+
+.back-arrow {
+  position: fixed;
+  top: 20px;
+  left: 40px;
+  font-size: 28px;
+  text-decoration: none;
+  color: #fbfbfb;
+  z-index: 2000;
+  font-weight: bold;
+  z-index: 2000;
+}
+
+.back-arrow:hover {
+  opacity: 0.6;
+}
+
+/* =========================================
+   FOND PAGE PROGRAMMATION
+========================================= */
+
+.page-programmation {
+  background-color: #001f3d;
+}
+
+.image-wrapper {
+  position: relative;
+  z-index: 1;
+}
